@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Playground</title>
+
+<script src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+		/* alert('Good Morning. This is a wake up call.'); */
+		
+		$('.carbon').click(function() {
+			$('body').removeClass();
+			$('body').toggleClass("carbon");		
+		});
+		
+		$('.dot').click(function() {
+			$('body').removeClass();
+			$('body').toggleClass("dot");		
+		});
+		
+		$('.checker').click(function() {
+			$('body').removeClass();
+			$('body').toggleClass("checker");		
+		});
+		
+		$('.stripe').click(function() {
+			$('body').removeClass();
+			$('body').toggleClass("stripe");		
+		});
+		
+		$('.wave').click(function() {
+			$('body').removeClass();
+			$('body').toggleClass("wave");		
+		});
+		
+});
+</script>
+
+
+
+<style type="text/css">
+body {
+	font-family: Helvetica, Arial;
+	-webkit-transition: background 1s ;
+}
+
+/* css3 background */
+.carbon {
+	background:
+	-webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
+	-webkit-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
+	-webkit-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
+	-webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
+	-webkit-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
+	-webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+}
+.dot {
+	background:
+	-webkit-radial-gradient(black 15%, transparent 16%) 0 0,
+	-webkit-radial-gradient(black 15%, transparent 16%) 8px 8px,
+	-webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+	-webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+}
+.checker {
+	background-color:white;
+	background-image: 
+		-webkit-linear-gradient(0, rgba(200,0,0,.5) 50%, transparent 50%),
+		-webkit-linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+	background-size:50px 50px;
+}
+.stripe {
+	background-color: #ffdf96;
+	background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+}
+.wave {
+	background-color:#7fe3ff;
+	background-image: 
+		-webkit-radial-gradient(100% 150%, circle, #7fe3ff 24%, white 25%, white 28%, #7fe3ff 29%, #7fe3ff 36%, white 36%, white 40%, transparent 40%, transparent),
+		-webkit-radial-gradient(0    150%, circle, #7fe3ff 24%, white 25%, white 28%, #7fe3ff 29%, #7fe3ff 36%, white 36%, white 40%, transparent 40%, transparent),
+		-webkit-radial-gradient(50%  100%, circle, white 10%, #7fe3ff 11%, #7fe3ff 23%, white 24%, white 30%, #7fe3ff 31%, #7fe3ff 43%, white 44%, white 50%, #7fe3ff 51%, #7fe3ff 63%, white 64%, white 71%, transparent 71%, transparent),
+		-webkit-radial-gradient(100% 50%,  circle, white 5%, #7fe3ff 6%, #7fe3ff 15%, white 16%, white 20%, #7fe3ff 21%, #7fe3ff 30%, white 31%, white 35%, #7fe3ff 36%, #7fe3ff 45%, white 46%, white 49%, transparent 50%, transparent),
+		-webkit-radial-gradient(0    50%,  circle, white 5%, #7fe3ff 6%, #7fe3ff 15%, white 16%, white 20%, #7fe3ff 21%, #7fe3ff 30%, white 31%, white 35%, #7fe3ff 36%, #7fe3ff 45%, white 46%, white 49%, transparent 50%, transparent);
+	background-size:100px 50px;
+}
+
+.content {
+	background-color:rgba(255,255,255,0.8);
+	margin:50px;
+	padding:10px 30px;
+	-webkit-border-radius:10px;
+	box-shadow:#999 0 0 8px;
+}
+
+a {font-size:20px; font-family: Helvetica;}
+
+/* body background switch */
+.color-select {
+	overflow: hidden;
+}
+.color-select li {
+	float:left;
+	list-style: none;
+	margin-right:20px;
+	text-indent: -9999px;
+}
+.color-select a {
+	display:block;
+	width:100px;
+	height:100px;
+	opacity:0.7;
+	-webkit-transition: opacity 0.2s ease-in;
+}
+.color-select a:hover {
+	opacity: 1;
+}
+
+/* link color transition */
+a.simple{color:#000; -webkit-transition:color 0.3s ease-in;} 
+a.simple:hover{color:#f00;}
+
+/* background color transition */
+a.thebg{
+	display: inline-block;
+	color:#000; 
+	background:yellow; 
+	padding:15px; 
+	-webkit-border-radius: 5px; 
+	-webkit-transition:color 0.4s linear, background 0.1s ease-in; 
+} 
+a.thebg:hover{
+	color:#FFF;
+	background:black;
+}
+
+/* jumping links */
+.jump {-webkit-transition:margin 0.3s ease-in;}
+a:hover.jump {margin-left:55px;}
+
+/* rotate image */
+img.rotate {
+	-webkit-transition:0.3s ease-in;
+}
+img:hover.rotate {
+	-webkit-transform:rotate(90deg) scale(3) translate(5px,-55px);
+}
+
+</style>
+</head>
+
+<body>
+<div class="content">
+	<h1>BBQ Playground</h1>
+	<h2>CSS3 background</h2>
+		<ul class="color-select">
+			<li><a href="#" class="carbon" title="good">Carbon</a></li>
+			<li><a href="#" class="checker">Checker</a></li>
+			<li><a href="#" class="stripe">Stripe</a></li>
+			<li><a href="#" class="wave">Wave</a></li>
+			<li><a href="#" class="dot">Dot</a></li>
+		</ul>
+	
+	<hr>
+	<h2>Simple Link</h2>
+	<a href="#" class="simple">What is a link?</a>
+	
+	<hr>
+	<h2>Background Link</h2>
+	<a href="#" class="thebg">This is a link</a>
+	
+	<hr>
+	<h2>Jumping Link</h2>
+	<a href="#" class="jump">Hover and jump around the world!</a>
+	
+	<h2>Animated Image</h2>
+	<img src="rss.png" class="rotate"> <img src="fav.png" class="rotate">
+	
+	<h2 class="ct1">中文字體</h2>
+	<p class="ct2">改變中文字型哈哈哈</p>
+</div>
+</body>
+</html>
